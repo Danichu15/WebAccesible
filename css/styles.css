@@ -92,10 +92,12 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  color:#4d4d4d;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
     font-size: 2rem;
+    color:#4d4d4d;
   }
 }
 
@@ -10608,6 +10610,7 @@ blockquote {
   font-weight: 800;
   letter-spacing: 0.0625em;
   text-transform: uppercase;
+  float: right;
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -10789,7 +10792,6 @@ header.masthead .site-heading .h1 {
 
 .post-preview > .post-meta {
   font-size: 1.125rem;
-  font-style: italic;
   margin-top: 0;
   color: #6c757d;
 }
