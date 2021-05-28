@@ -64,7 +64,7 @@
                                         <form>
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputName" type="text" aria-required="true" placeholder="Escribe tu nombre..." />
-                                                <label for="inputName">Nombre*</label>
+                                                <label id="nameLabel" for="inputName">Nombre*</label>
                                             </div>
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputSurname" type="text" placeholder="Escribe tus apellidos..." />
@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputEmail" type="email" aria-required="true" aria-describedby="ayudaCorreo" placeholder="Escribe el email de destino..." />
-                                                <label for="inputEmail">Email de destino*</label>
+                                                <label id="emailLabel" for="inputEmail">Correo electrónico de destino*</label>
                                                 <p style="color:#4d4d4d;" id="ayudaCorreo">Por ejemplo: pepe@gmail.com</p>
                                             </div>
                                             <div class="form-floating">
@@ -103,7 +103,7 @@
                             <br />
                             <br />
                             <div class="row gx-1 gx-lg-2 justify-content-center">
-                                <button id="sendButtonId" onClick="alert('Postal enviada con éxito');" class="btn btn-primary text-uppercase" type="submit">Enviar</button>
+                                <button id="sendButton" class="btn btn-primary text-uppercase" type="submit">Enviar</button>
                             </div>
                         </div>
                     </div>
@@ -152,13 +152,23 @@
         <script src="js/scripts.js"></script>
         <script>
 
+            var inputName = document.getElementById('inputName');
+            var inputEmail = document.getElementById('inputEmail');
+
+            var nameLabel = document.getElementById('nameLabel');
+            var emailLabel = document.getElementById('emailLabel');
+
             var postal1 = document.getElementById('imgPostal1');
             var postal2 = document.getElementById('imgPostal2');
             var postal3 = document.getElementById('imgPostal3');
 
             var postal1Selected = false;
             var postal2Selected = false;
-            var postal2Selected = false;
+            var postal3Selected = false;
+
+            var sendButton = document.getElementById('sendButton');
+
+            var camposOk = false;
 
             postal1.onclick = function(){
                 if(postal1Selected){
@@ -193,7 +203,7 @@
             postal3.onclick = function(){
                 if(postal3Selected){
                     postal3.style.border = "none";
-                    postal1Selected = false;
+                    postal3Selected = false;
                 }else{
                     postal3.style.border = "10px solid #3CB371";
                     postal2.style.border = "none";
@@ -203,6 +213,28 @@
                     postal1Selected = false;
                 }
             }
+
+            sendButton.onclick = function(){
+                if(inputName.value.length == 0 | inputEmail.value.length == 0){
+                    alert('Los campos obligatorios deben estar rellenos.');
+                    if(inputName.value.length == 0){
+                        nameLabel.style.color = "red";
+                    }
+                    if(inputEmail.value.length == 0){
+                        emailLabel.style.color = "red";
+                    } 
+                }else{
+                    camposOk = true;
+                }
+
+                if(postal1Selected == false & postal2Selected == false & postal3Selected == false & camposOk){
+                    alert('Debes seleccionar una imagen para enviar.');
+                }else if(camposOk){
+                    alert('Postal enviada con éxito');
+                }
+            }
+
+
 
         </script>
     </body>
