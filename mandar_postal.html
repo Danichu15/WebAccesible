@@ -84,13 +84,19 @@
                                             <p id="selectImg" style="color:#4d4d4d;">Selecciona la imagen que quieres que contenga tu postal: (obligatorio)</p>
                                             <div class="row">
                                                 <div class="col-xl">
-                                                    <img id="imgPostal1" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-1.jpg" height="250" width="300" alt="Primera imagen de postal, ciudad y mar" />
+                                                    <button id="postalButton1" type="button">
+                                                        <img id="imgPostal1" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-1.jpg" alt="Primera imagen de postal, ciudad y mar" />
+                                                    </button>
                                                 </div>
                                                 <div class="col-xl">
-                                                    <img id="imgPostal2" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-2.jpg" height="250" width="300" alt="Segunda imagen de postal, botes y ciudad" />
+                                                    <button id="postalButton2" type="button">
+                                                        <img id="imgPostal2" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-2.jpg" alt="Segunda imagen de postal, botes y ciudad" />
+                                                    </button>
                                                 </div>
                                                 <div class="col-xl">
-                                                    <img id="imgPostal3" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-3.jpg" height="250" width="300" alt="Tercera imgaen de postal, ciudad y playa" />
+                                                    <button id="postalButton3" type="button">
+                                                        <img id="imgPostal3" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-3.jpg" alt="Tercera imgaen de postal, ciudad y playa" />
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="row gx-1 gx-lg-2 justify-content-center">
@@ -117,10 +123,10 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                               <img src="assets/img/wcag2.0.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de grado de accesibiliad AA"/>
+                               <img src="assets/img/wcag2.1AA.jpg" width="100em" height="50em" class="img-fluid rounded mx-auto d-block" alt="Icono de grado de accesibiliad AA"/>
                             </li>
                             <li class="list-inline-item">
-                               <img src="assets/img/lynxpaw.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de inspección de navegador textual Lynx"/>
+                               <img src="assets/img/lynxpaw.jpg" width="100em" height="50em" class="img-fluid rounded mx-auto d-block" alt="Icono de inspección de navegador textual Lynx"/>
                             </li>
                         </ul>
                         <div class="small text-center text-muted">Por Daniel Liszewski Maciag y Lucía Romero Villar</div>
@@ -145,6 +151,10 @@
             var postal1 = document.getElementById('imgPostal1');
             var postal2 = document.getElementById('imgPostal2');
             var postal3 = document.getElementById('imgPostal3');
+
+            var postalButton1 = document.getElementById('postalButton1');
+            var postalButton2 = document.getElementById('postalButton2');
+            var postalButton3 = document.getElementById('postalButton3');
 
             var selectImg = document.getElementById('selectImg');
 
@@ -204,6 +214,32 @@
                 }
             }
 
+            postalButton1.addEventListener("keyup", function(event){
+                if(event.keyCode === 13){
+                    event.preventDefault();
+                    postal1.click();
+                }
+            });
+
+            postalButton2.addEventListener("keyup", function(event){
+                if(event.keyCode === 13){
+                    event.preventDefault();
+                    postal2.click();
+                }
+            });
+
+            postalButton3.addEventListener("keyup", function(event){
+                if(event.keyCode === 13){
+                    event.preventDefault();
+                    postal3.click();
+                }
+            });
+
+            function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
             sendButton.onclick = function(){
 
                 if(inputName.value.length == 0 | inputEmail.value.length == 0){
@@ -215,7 +251,12 @@
                         emailLabel.style.color = "red";
                     } 
                 }else{
-                    camposOk = true;
+                    if(validateEmail(inputEmail.value)){
+                        camposOk = true;
+                    }else{
+                        alert('El formato del correo electrónico es incorrecto. El formato correcto es por ejemplo: pepe@gmail.com')
+                    }
+                    
                 }
 
                 if(postal1Selected == false & postal2Selected == false & postal3Selected == false & camposOk){
@@ -227,9 +268,7 @@
                     location.reload(); 
                 }
             }
-
-
-
+            
         </script>
     </body>
 </html>
