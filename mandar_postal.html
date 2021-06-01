@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Página web accesible para la práctica 3 de Multimedia" />
         <meta name="author" content="Daniel Liszewksi Maciag y Lucía Romero Villar" />
-        <title>Visita Malta | Mandar una postal</title>
+        <title>Visita Malta | Mandar una postal de Malta</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -22,7 +22,6 @@
                 <a class="navbar-brand" title="Volver a la página principal" href="index.html">Visita Malta</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
-                    <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
@@ -36,20 +35,22 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <div title="Imagen de fondo de título, mandar una postal">
-            <header class="masthead" style="background-image: url('assets/img/malta-postales-bg.jpg')">
-                <div class="container position-relative px-4 px-lg-5">
-                    <div class="row gx-4 gx-lg-5 justify-content-center">
-                        <div class="col-md-10 col-lg-8 col-xl-7">
-                            <div class="page-heading">
-                                <h1>Mandar una postal</h1>
-                                <span class="subheading">Manda un recuerdo de tu visita a Malta</span>
+        <header>
+            <div title="Imagen de fondo de título, mandar una postal">
+                <header class="masthead" style="background-image: url('assets/img/malta-postales-bg.jpg')">
+                    <div class="container position-relative px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                                <div class="page-heading">
+                                    <h1>Mandar una postal</h1>
+                                    <span class="subheading">Manda un recuerdo de tu visita a Malta</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </header>
-        </div>
+                </header>
+            </div>
+        </header>
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-5 px-lg-6">
@@ -59,12 +60,12 @@
                             <div class="row gx-5 gx-lg-6 justify-content-center">
                                 <div class="col-md-10 col-lg-8 col-xl-8">
                                     <p style="color:#4d4d4d;">Rellena los campos que aparecen a continuación y pulsa sobre le botón enviar para mandar la postal.</p>
-                                    <p style="color:#4d4d4d;">Los campos con asterisco (*) son obligatorios.</p>
+                                    <p style="color:#4d4d4d;">Los campos marcados como obligatorios deben estar rellenos para poder enviar la postal.</p>
                                     <div class="my-5">
-                                        <form>
+                                        <form id="postalForm">
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputName" type="text" aria-required="true" placeholder="Escribe tu nombre..." />
-                                                <label id="nameLabel" for="inputName">Nombre*</label>
+                                                <label id="nameLabel" for="inputName">Nombre (obligatorio)</label>
                                             </div>
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputSurname" type="text" placeholder="Escribe tus apellidos..." />
@@ -72,84 +73,67 @@
                                             </div>
                                             <div class="form-floating">
                                                 <input class="form-control" id="inputEmail" type="email" aria-required="true" aria-describedby="ayudaCorreo" placeholder="Escribe el email de destino..." />
-                                                <label id="emailLabel" for="inputEmail">Correo electrónico de destino*</label>
+                                                <label id="emailLabel" for="inputEmail">Correo electrónico de destino (obligatorio)</label>
                                                 <p style="color:#4d4d4d;" id="ayudaCorreo">Por ejemplo: pepe@gmail.com</p>
                                             </div>
                                             <div class="form-floating">
                                                 <textarea class="form-control" id="inputMessage" placeholder="Escribe tu mensaje aquí..." style="height: 12rem"></textarea>
                                                 <label for="inputMessage">Mensaje</label>
                                             </div>
-                                             <br />
+                                            <br />
+                                            <p id="selectImg" style="color:#4d4d4d;">Selecciona la imagen que quieres que contenga tu postal: (obligatorio)</p>
+                                            <div class="row">
+                                                <div class="col-xl">
+                                                    <img id="imgPostal1" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-1.jpg" height="250" width="300" alt="Primera imagen de postal, ciudad y mar" />
+                                                </div>
+                                                <div class="col-xl">
+                                                    <img id="imgPostal2" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-2.jpg" height="250" width="300" alt="Segunda imagen de postal, botes y ciudad" />
+                                                </div>
+                                                <div class="col-xl">
+                                                    <img id="imgPostal3" class="mb-3 img-fluid rounded mx-auto d-block" src="assets/img/malta-postal-3.jpg" height="250" width="300" alt="Tercera imgaen de postal, ciudad y playa" />
+                                                </div>
+                                            </div>
+                                            <div class="row gx-1 gx-lg-2 justify-content-center">
+                                                <input type="submit" id="sendButton" title="Enviar postal" class="btn btn-primary text-uppercase" value="Enviar"/>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="container">
-                                <p style="color:#4d4d4d;">Selecciona la imagen que quieres que contenga tu postal:</p>
-                                <div class="row">
-                                    <div class="col-xl">
-                                        <img id="imgPostal1" class="mb-3" src="assets/img/malta-postal-1.jpg" height="250" width="300" />
-                                    </div>
-                                    <div class="col-xl">
-                                        <img id="imgPostal2" class="mb-3" src="assets/img/malta-postal-2.jpg" height="250" width="300" />
-                                    </div>
-                                    <div class="col-xl">
-                                        <img id="imgPostal3" class="mb-3" src="assets/img/malta-postal-3.jpg" height="250" width="300" />
-                                    </div>
-                                </div>
+                                
                             </div>
-                            <br />
-                            <br />
-                            <br />
-                            <div class="row gx-1 gx-lg-2 justify-content-center">
-                                <button id="sendButton" class="btn btn-primary text-uppercase" type="submit">Enviar</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <!-- Footer
+        <!-- Footer -->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                               <img src="assets/img/wcag2.0.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de grado de accesibiliad AA"/>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                               <img src="assets/img/lynxpaw.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de inspección de navegador textual Lynx"/>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                        <div class="small text-center text-muted">Por Daniel Liszewski Maciag y Lucía Romero Villar</div>
                     </div>
                 </div>
             </div>
-        </footer>-->
+        </footer> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
 
             var inputName = document.getElementById('inputName');
@@ -162,6 +146,8 @@
             var postal2 = document.getElementById('imgPostal2');
             var postal3 = document.getElementById('imgPostal3');
 
+            var selectImg = document.getElementById('selectImg');
+
             var postal1Selected = false;
             var postal2Selected = false;
             var postal3Selected = false;
@@ -169,6 +155,10 @@
             var sendButton = document.getElementById('sendButton');
 
             var camposOk = false;
+
+            $("#postalForm").submit(function(e) {
+                e.preventDefault();
+            });
 
             postal1.onclick = function(){
                 if(postal1Selected){
@@ -215,6 +205,7 @@
             }
 
             sendButton.onclick = function(){
+
                 if(inputName.value.length == 0 | inputEmail.value.length == 0){
                     alert('Los campos obligatorios deben estar rellenos.');
                     if(inputName.value.length == 0){
@@ -229,8 +220,11 @@
 
                 if(postal1Selected == false & postal2Selected == false & postal3Selected == false & camposOk){
                     alert('Debes seleccionar una imagen para enviar.');
+                    selectImg.style.color = "red";
                 }else if(camposOk){
                     alert('Postal enviada con éxito');
+                    document.getElementById("postalForm").reset();
+                    location.reload(); 
                 }
             }
 

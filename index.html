@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Página web accesible para la práctica 3 de Multimedia" />
         <meta name="author" content="Daniel Liszewksi Maciag y Lucía Romero Villar" />
-        <title>Visita Malta | Página principal</title>
+        <title>Visita Malta | Información general sobre Malta</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -22,7 +22,6 @@
                 <a class="navbar-brand" title="Volver a la página principal" href="index.html">Visita Malta</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
-                    <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
@@ -36,79 +35,64 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <div title="Imagen de fondo de título, ciudad de Malta">
-            <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-                <div class="container position-relative px-4 px-lg-5">
-                    <div class="row gx-4 gx-lg-5 justify-content-center">
-                        <div class="col-md-10 col-lg-8 col-xl-7">
-                            <div class="site-heading">
-                                <h1>Malta</h1>
-                                <span class="subheading">Un paraíso en el Mediterráneo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
+        <header>
+	        <div title="Imagen de fondo de título, ciudad de Malta">
+	            <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+	                <div class="container position-relative px-4 px-lg-5">
+	                    <div class="row gx-4 gx-lg-5 justify-content-center">
+	                        <div class="col-md-10 col-lg-8 col-xl-7">
+	                            <div class="site-heading">
+	                                <h1>Visita Malta</h1>
+	                                <span class="subheading">Un paraíso en el Mediterráneo</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </header>
+	        </div>
+    	</header>
         <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <!-- Información general-->
-                    <div class="post-preview">
-                        <h2 class="post-title">Información general</h2>
-                        <p class="post-meta">
-                            <b>Malta</b>, compuesto por un archipélago, se encuentra situada en el mar Mediterráno, al sur de Italia y al norte de Libia. Es un popular destino turístico con un clima cálido, numerosas áreas recreativas y monumentos arquitectónicos e históricos, incluidos tres sitios del Patrimonio Mundial de la <b>UNESCO</b>.
-                        </p>
-                        <img src="assets/img/mapa-turistico-malta.jpg" class="img-fluid rounded mx-auto d-block" height="500" width="700" alt="Mapa turístico de Malta. Se pueden ver las tres islas que componen el país, Gozo, Comino y Malta. También se pueden observar ciudades importantes como la capital, La Valetta"/>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-5" />
-                    <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4">
-                        <a class="btn btn-primary text-uppercase" title="Ir a la página de mandar postales" href="mandar_postal.html">
-                            Mandar una postal de Malta
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer
+        <main>
+	        <div class="container px-4 px-lg-5">
+	            <div class="row gx-4 gx-lg-5 justify-content-center">
+	                <div class="col-md-10 col-lg-8 col-xl-7">
+	                    <!-- Información general-->
+	                    <div class="post-preview mb-4">
+	                        <h2 class="post-title">Información general sobre Malta</h2>
+	                        <p class="post-meta">
+	                            <strong>Malta</strong>, compuesto por un archipélago, se encuentra situada en el mar Mediterráno, al sur de Italia y al norte de Libia. Es un popular destino turístico con un clima cálido, numerosas áreas recreativas y monumentos arquitectónicos e históricos, incluidos tres sitios del Patrimonio Mundial de la <strong>UNESCO</strong>.
+	                        </p>
+	                        <img src="assets/img/mapa-turistico-malta.jpg" class="img-fluid rounded mx-auto d-block" height="500" width="700" alt="Mapa turístico de Malta. Se pueden ver las tres islas que componen el país, Gozo, Comino y Malta."/>
+	                    </div>
+	                    
+	                    <!-- Pager-->
+	                    <div class="d-flex justify-content-end mb-4">
+	                        <a class="btn btn-primary text-uppercase" title="Ir a la página de mandar postales" href="mandar_postal.html">
+	                            Mandar una postal de Malta
+	                        </a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+    	</main>
+        <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                               <img src="assets/img/wcag2.0.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de grado de accesibiliad AA"/>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
+                               <img src="assets/img/lynxpaw.jpg" width="100px" height="50px" class="img-fluid rounded mx-auto d-block" alt="Icono de inspección de navegador textual Lynx"/>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Por Daniel Liszewski Maciag y Lucía Romero Villar</div>
+                        <div class="small text-center text-muted">Por Daniel Liszewski Maciag y Lucía Romero Villar</div>
                     </div>
                 </div>
             </div>
-        </footer> -->
+        </footer> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
